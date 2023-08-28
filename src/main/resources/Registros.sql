@@ -9,10 +9,10 @@ INSERT INTO ESTADO (DescEstado) VALUES ('CANCELADA');
 INSERT INTO SALA (DescSala,Asientos,IdEstado) VALUES ('SALA 1',14,4);
 INSERT INTO SALA (DescSala,Asientos,IdEstado) VALUES ('SALA 2',14,4);
 /*Insert en la tabla Pelicula*/
-INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 1',2,'ACCIÓN','APTO PARA TODOS','3D',1);
+INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 1',2,'ACCIï¿½N','APTO PARA TODOS','3D',1);
 INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 2',4,'COMEDIA','APTO PARA TODOS','2D',1);
 INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 3',3,'TRILLER','APTO PARA TODOS','2D',1);
-INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 4',3,'ACCIÓN','APTO PARA TODOS','3D',1);
+INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 4',3,'ACCIï¿½N','APTO PARA TODOS','3D',1);
 INSERT INTO PELICULA (Titulo,Duracion,Genero,Clasificacion,Formato,IdEstado) VALUES ('THE MOVIE 5',3,'TERROR','APTO PARA TODOS','3D',1);
 /*ASIENTOS POR SALA */
 INSERT INTO ASIENTO (NroAsiento,IdSala,IdEstado) VALUES (1,1,1);
@@ -55,8 +55,8 @@ INSERT INTO EMPLEADO(Nombre,Apellido,FechaContrat,IdEstado) VALUES ('JOSE','HERN
 INSERT INTO TICKET(Tipo,Descripcion,Precio,IdEstado) VALUES ('ENTRADA GENERAL','ENTRADA PARA LAS PERSONAS MAYORES DE 18 ANIOS',10,1);
 INSERT INTO TICKET(Tipo,Descripcion,Precio,IdEstado) VALUES ('ENTRADA NINOS','ENTRADA PARA LOS NINOS',5,1);
 /*Insert en la tabla Promocion*/
-INSERT INTO PROMOCION(Nombre,Descuento,BaseTicket,IdEstado) VALUES ('PROMOCION 3X2',1.0,1,1);
-INSERT INTO PROMOCION(Nombre,Descuento,BaseTicket,IdEstado) VALUES ('DESCUENTO 30%',0.3,0,1); 
+INSERT INTO PROMOCION(Nombre,Descuento,BaseTicket,IdEstado) VALUES ('PROMOCION 3X2',1.0,B'1',1);
+INSERT INTO PROMOCION(Nombre,Descuento,BaseTicket,IdEstado) VALUES ('DESCUENTO 30%',0.3,B'1',1);
 /*Insert en la tabla PROGRPROMOCION*/
 INSERT INTO PROGRPROMOCION(Fecha,Promocion,IdEstado) VALUES (CURRENT_TIMESTAMP,'DESCUENTO 30%',1);
 INSERT INTO PROGRPROMOCION(Fecha,Promocion,IdEstado) VALUES (CURRENT_TIMESTAMP,'PROMOCION 3x2',1);
