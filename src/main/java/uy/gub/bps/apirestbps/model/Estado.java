@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -23,4 +24,5 @@ public class Estado {
     public Estado(String descestado) {
         this.descestado = descestado;
     }
+
 }
