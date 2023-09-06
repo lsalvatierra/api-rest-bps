@@ -3,6 +3,7 @@ package uy.gub.bps.apirestbps.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "asiento")
 public class Asiento {
     @Id
