@@ -25,7 +25,6 @@ public class ApiRestBpsApplication {
 
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			super.configure(http);
 			http.csrf().disable()
 					.addFilterBefore(new FiltroJWTAutorizacion(),
 							UsernamePasswordAuthenticationFilter.class)

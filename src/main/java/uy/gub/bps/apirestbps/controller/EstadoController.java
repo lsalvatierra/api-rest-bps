@@ -3,6 +3,7 @@ package uy.gub.bps.apirestbps.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import uy.gub.bps.apirestbps.exception.ResourceNotFoundException;
 import uy.gub.bps.apirestbps.model.Estado;
@@ -11,11 +12,14 @@ import uy.gub.bps.apirestbps.service.EstadoService;
 import java.util.ArrayList;
 import java.util.List;
 
+@PreAuthorize("hasRole('ADMIN')")
 @RestController
 @RequestMapping(path = "api/v1/estado")
 public class EstadoController {
     @Autowired
     private EstadoService estadoService;
+
+    @PreAuthorize("hasRole('VENTAS')")
     @GetMapping("")
     public ResponseEntity<List<Estado>> obtenerTodo(){
         List<Estado> estados = new ArrayList<>();

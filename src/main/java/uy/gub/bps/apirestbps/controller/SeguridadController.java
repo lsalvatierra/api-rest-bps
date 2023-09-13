@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,6 @@ import uy.gub.bps.apirestbps.exception.ResourceNotFoundException;
 import uy.gub.bps.apirestbps.model.security.Usuario;
 import uy.gub.bps.apirestbps.model.security.UsuarioResponse;
 import uy.gub.bps.apirestbps.service.SeguridadService;
-
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,6 +28,7 @@ public class SeguridadController {
     private SeguridadService seguridadService;
 
     @PostMapping("/autenticacion")
+    @Transactional(readOnly = true)
     public ResponseEntity<UsuarioResponse> autenticarUsuario(
             @RequestParam("usuario") String usuario,
             @RequestParam("password") String password
@@ -46,7 +47,7 @@ public class SeguridadController {
 
 
     private String generarToken(String usuario, int idusuario){
-        String clave = ">${security.clave}"; // dinamico desde la BD
+        String clave = "${security.clave}"; // dinamico desde la BD
         List<GrantedAuthority> grantedAuthorityList =
                 AuthorityUtils.createAuthorityList(
                         seguridadService.listarRolesPorUsuario(idusuario)
