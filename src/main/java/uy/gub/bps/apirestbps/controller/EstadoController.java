@@ -19,7 +19,6 @@ public class EstadoController {
     @Autowired
     private EstadoService estadoService;
 
-    @PreAuthorize("hasRole('VENTAS')")
     @GetMapping("")
     public ResponseEntity<List<Estado>> obtenerTodo(){
         List<Estado> estados = new ArrayList<>();
